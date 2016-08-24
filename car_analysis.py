@@ -45,6 +45,19 @@ MPG_list = MPG(cardata)
 
 hist_MPG = histogramify(MPG_list,25)
 
+def cars_MPG_given_HP(horsepower):
+	return theta[1]*horsepower+theta[0]
+
+def Torque(cardata):
+    Torque_list = []
+    for i in range(len(cardata)):
+        Torque_list.append(cardata[i]['Engine Information']['Engine Statistics']['Torque'])
+    return Torque_list
+
+Torque_list = Torque(cardata)
+
+hist_Torque = histogramify(Torque_list,25)
+
 if __name__=="__main__":
    print """
 Try:
